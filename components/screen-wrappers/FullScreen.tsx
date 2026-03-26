@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 type ScreenWrapperProps = {
@@ -14,9 +14,5 @@ export default function FullScreen({
   padding = 20,
   gap,
 }: ScreenWrapperProps) {
-  return (
-    <View>
-      <Text>FullScreen</Text>
-    </View>
-  );
+  return <View>{children}</View>;
 }
