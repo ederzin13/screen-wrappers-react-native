@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 type ScreenWrapperProps = {
   children: React.ReactNode;
@@ -14,5 +14,18 @@ export default function FullScreen({
   padding = 20,
   gap,
 }: ScreenWrapperProps) {
-  return <View>{children}</View>;
+  return (
+    <SafeAreaProvider
+      style={[
+        {
+          padding,
+          justifyContent: center ? "center" : "flex-start",
+          alignItems: center ? "center" : "flex-start",
+          gap: gap,
+        },
+      ]}
+    >
+      {children}
+    </SafeAreaProvider>
+  );
 }
