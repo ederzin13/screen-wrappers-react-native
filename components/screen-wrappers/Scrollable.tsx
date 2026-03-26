@@ -1,10 +1,25 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function Scrollable() {
+type ScrollableProps = {
+  children: React.ReactNode;
+  padding?: number;
+  gap?: number;
+  onRefresh?: () => void;
+};
+
+export default function Scrollable({
+  children,
+  padding = 20,
+  gap,
+  onRefresh,
+}: ScrollableProps) {
   return (
-    <View>
-      <Text>Scrollable</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <ScrollView>{children}</ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
