@@ -1,0 +1,22 @@
+import { View, Text } from "react-native";
+import React from "react";
+
+type ScreenWrapperProps = {
+  children: React.ReactNode;
+  center?: boolean;
+  padding?: number;
+  gap?: number;
+};
+
+export default function FullScreen({
+  children,
+  center,
+  padding = 20,
+  gap,
+}: ScreenWrapperProps) {
+  return (
+    <View>
+      <Text>FullScreen</Text>
+    </View>
+  );
+}
