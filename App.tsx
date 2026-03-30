@@ -7,14 +7,18 @@ import Title from "./components/Title";
 
 export default function App() {
   // return (
-  //   <FullScreen center={true} gap={20}>
+  //   <FullScreen center gap={50}>
   //     <Login></Login>
   //     <Button text="Fazer login" buttonColor="green"></Button>
   //   </FullScreen>
   // );
 
+  const handleLog = async () => {
+    console.log("Fetching...");
+  };
+
   return (
-    <Scrollable center={true} gap={30}>
+    <Scrollable center={true} gap={30} onRefresh={handleLog}>
       <Title
         title="Best company employees"
         description="Most hard working employee from each department"
